@@ -1,0 +1,6 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+        "record-result": "/components/mod-record-result/index"
+    }
+}

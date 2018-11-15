@@ -1,0 +1,26 @@
+<scroll-view class="content" scroll-y="{{scrollY}}" style="height:{{scrollHeight}}">
+    <view class="list">
+        <block wx:for="{{list}}" wx:key="{{item.id}}" wx:for-index="idx">
+            <view id="{{item.id}}" data-item="{{item}}" class="item" bindtap="selectLocation" bindtouchstart='ontouchstart' bindtouchmove='ontouchmove' bindtouchend='ontouchend'>
+                <!-- 地址信息 -->
+                <view animation="{{item.animation}}" class="container-info">
+                    <view class="location">
+                        <!-- 搜索结果高亮组件 -->
+                        {{item.content}}
+                    </view>
+                    <view class="address">
+                        {{item.content}}
+                    </view>
+                </view>
+                <view class="bottom-line"></view>
+                <!-- 菜单功能 -->
+                <view class="msg-menu">
+                    <view id="{{item.id}}" data-type="menu" class='menu-delete' catch:tap='deleteMsgItem'>
+                        删除
+                    </view>
+                    <view id="{{item.id}}" class='menu-mark' data-type="menu" catch:tap='upToNo1'>置顶</view>
+                </view>
+            </view>
+        </block>
+    </view>
+</scroll-view>
